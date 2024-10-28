@@ -1,0 +1,27 @@
+#EEEEEEEEEEEEEEEEE
+if self.shared_data["regime"] == True:
+    #self.find_dot(1,3,5,8)  
+    continue          
+else:
+    if self.shared_data["finger"] == 2:
+        self.find_dist(5,6,7,8)
+    elif self.shared_data["finger"] == 3:
+        self.find_dist(9,10,11,12)
+    elif self.shared_data["finger"] == 4:
+        self.find_dist(13,14,15,16)
+                    
+#EEEEEEEEEEEEEEEEEEEEEEEEEEE
+elif event.key() == Qt.Key_R:
+    self.shared_data["regime"] = -self.shared_data["regime"]
+    
+    if self.shared_data["regime"] == True:
+        print("REG: RELATIVE")
+    else:
+        print("REG: ABSOLUTE")
+else:
+    print(f"FOCUS: {int(event.key())-48}")
+    self.shared_data["finger"] = int(event.key())-48
+    
+    #EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+                    "regime": True,
+                    "finger": None
